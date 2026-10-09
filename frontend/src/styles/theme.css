@@ -1,0 +1,453 @@
+@custom-variant dark (&:is(.dark *));
+
+/* ========================================================================= */
+/* 1. LIGHT THEME (VISUAL BASELINE)                                          */
+/* ========================================================================= */
+:root,
+[data-theme="light"],
+.theme-light {
+  --font-size: 15px;
+
+  /* App Backgrounds & Surfaces */
+  --app-bg: #F4FAFA;
+  --page-bg: #F4FAFA;
+  --background: #F4FAFA;
+  --surface: #FFFFFF;
+  --surface-secondary: #EEF4F7;
+  --surface-hover: #F0F8F8;
+  --card: #FFFFFF;
+  --card-foreground: #16374A;
+  --card-muted-foreground: #6B7C87;
+  --card-border: #E0EEEE;
+  --popover: #FFFFFF;
+  --popover-foreground: #16374A;
+
+  /* Typography */
+  --text-primary: #16374A;
+  --text-secondary: #6B7C87;
+  --text-muted: #8898A2;
+  --text-inverse: #FFFFFF;
+  --foreground: #16374A;
+  --muted-foreground: #6B7C87;
+  --page-title: #16374A;
+  --page-subtitle: #6B7C87;
+
+  /* Borders & Dividers */
+  --border: #E0EEEE;
+  --border-strong: #C8DEDE;
+  --border-subtle: #EDF4F4;
+
+  /* Primary Brand (Marquardt Teal) */
+  --primary: #008E95;
+  --primary-dark: #007A80;
+  --primary-light: #00A8A8;
+  --primary-soft: rgba(0, 142, 149, 0.12);
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #007A80;
+
+  /* Accents */
+  --accent: #33C7D6;
+  --accent-foreground: #16374A;
+  --secondary: #EEF4F7;
+  --secondary-foreground: #16374A;
+  --muted: #EEF4F7;
+
+  /* Status Colors (Accessible Light Backgrounds) */
+  --status-green: #16A34A;
+  --status-green-bg: #DCFCE7;
+  --status-green-text: #166534;
+  --status-yellow: #eac308ff;
+  --status-yellow-bg: #FEF9C3;
+  --status-yellow-text: #FDE047;
+  --status-orange: #EA580C;
+  --status-orange-bg: #FFEDD5;
+  --status-orange-text: #9A3412;
+  --status-red: #DC2626;
+  --status-red-bg: #FEE2E2;
+  --status-red-text: #991B1B;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  /* Inputs & Forms */
+  --input: #FFFFFF;
+  --input-bg: #FFFFFF;
+  --input-background: #EEF4F7;
+  --input-text: #16374A;
+  --input-placeholder: #8898A2;
+  --input-border: #E0EEEE;
+  --switch-background: #9DB8C2;
+  --ring: #008E95;
+
+  /* Tables */
+  --table-header-bg: #F8FAFC;
+  --table-row-hover: #F1F7F7;
+  --table-border: #E0EEEE;
+
+  /* Charts */
+  --chart-1: #008E95;
+  --chart-2: #00A8A8;
+  --chart-3: #33C7D6;
+  --chart-4: #F59E0B;
+  --chart-5: #10B981;
+  --chart-grid: #E0EEEE;
+  --chart-axis: #6B7C87;
+
+  /* Navigation & Sidebar */
+  --navbar-bg: #072C46;
+  --sidebar: #072C46;
+  --sidebar-gradient: linear-gradient(180deg, #008E95 0%, #0A3552 60%, #072C46 100%);
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #00A8A8;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(255, 255, 255, 0.15);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.10);
+  --sidebar-ring: #00A8A8;
+  --gradient-hero: linear-gradient(145deg, #00A8A8 0%, #0A3552 55%, #072C46 100%);
+
+  /* Elevation */
+  --radius: 0.875rem;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+}
+
+/* ========================================================================= */
+/* 2. DARK THEME (MODERN LAYERED DARK WITH HIGH CONTRAST)                    */
+/* ========================================================================= */
+.dark,
+[data-theme="dark"] {
+  --font-size: 15px;
+
+  /* App Backgrounds & Surfaces */
+  --app-bg: #070913;
+  --page-bg: #070913;
+  --background: #070913;
+  --surface: #131B2E;
+  --surface-primary: #131B2E;
+  --surface-secondary: #1C273E;
+  --surface-elevated: #22304C;
+  --surface-hover: #263654;
+  --card: #131B2E;
+  --card-foreground: #F8FAFC;
+  --card-muted-foreground: #94A3B8;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --popover: #162035;
+  --popover-foreground: #F8FAFC;
+
+  /* Typography */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-disabled: #475569;
+  --text-inverse: #070913;
+  --foreground: #F8FAFC;
+  --muted-foreground: #94A3B8;
+  --page-title: #FFFFFF;
+  --page-subtitle: #94A3B8;
+
+  /* Borders & Dividers */
+  --border: rgba(255, 255, 255, 0.12);
+  --border-default: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Primary Brand */
+  --primary: #38BDF8;
+  --primary-dark: #0284C7;
+  --primary-light: #7DD3FC;
+  --primary-soft: rgba(56, 189, 248, 0.18);
+  --primary-foreground: #070913;
+  --primary-hover: #0EA5E9;
+
+  /* Accents */
+  --accent: #2DD4BF;
+  --accent-foreground: #070913;
+  --secondary: #1C273E;
+  --secondary-foreground: #F8FAFC;
+  --muted: #1C273E;
+
+  /* Status Colors (Luminous on Dark) */
+  --status-green: #4ADE80;
+  --status-green-bg: rgba(34, 197, 94, 0.18);
+  --status-green-text: #4ADE80;
+  --status-yellow: #FDE047;
+  --status-yellow-bg: rgba(234, 179, 8, 0.18);
+  --status-yellow-text: #FDE047;
+  --status-orange: #FB923C;
+  --status-orange-bg: rgba(249, 115, 22, 0.18);
+  --status-orange-text: #FB923C;
+  --status-red: #F87171;
+  --status-red-bg: rgba(239, 68, 68, 0.18);
+  --status-red-text: #F87171;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  /* Inputs & Forms */
+  --input: #162035;
+  --input-bg: #162035;
+  --input-background: #162035;
+  --input-text: #F8FAFC;
+  --input-placeholder: #64748B;
+  --input-border: rgba(255, 255, 255, 0.16);
+  --switch-background: #1E3A5F;
+  --ring: #38BDF8;
+
+  /* Tables */
+  --table-header-bg: #101626;
+  --table-row-hover: #1C273E;
+  --table-border: rgba(255, 255, 255, 0.10);
+
+  /* Charts */
+  --chart-1: #38BDF8;
+  --chart-2: #2DD4BF;
+  --chart-3: #818CF8;
+  --chart-4: #4ADE80;
+  --chart-5: #FDE047;
+  --chart-grid: rgba(255, 255, 255, 0.08);
+  --chart-axis: #94A3B8;
+
+  /* Navigation & Sidebar */
+  --navbar-bg: #0A0E1A;
+  --sidebar: #0A0E1A;
+  --sidebar-gradient: linear-gradient(180deg, #111827 0%, #070913 100%);
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #38BDF8;
+  --sidebar-primary-foreground: #070913;
+  --sidebar-accent: rgba(56, 189, 248, 0.20);
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: rgba(255, 255, 255, 0.10);
+  --sidebar-ring: #38BDF8;
+  --gradient-hero: linear-gradient(145deg, #0F2942 0%, #070913 100%);
+
+  /* Elevation */
+  --radius: 0.875rem;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.50);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.65);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+}
+
+/* ========================================================================= */
+/* 3. MARQUARDT / TEAL THEME (PROFESSIONAL INDUSTRIAL MARQUARDT IDENTITY)    */
+/* ========================================================================= */
+[data-theme="teal"],
+[data-theme="marquardt"],
+.theme-teal {
+  --font-size: 15px;
+
+  /* App Backgrounds & Surfaces (Soft desaturated teal background + crisp neutral cards) */
+  --app-bg: #E6F4F4;
+  --page-bg: #E6F4F4;
+  --background: #E6F4F4;
+  --surface: #FFFFFF;
+  --surface-secondary: #E8F4F4;
+  --surface-hover: #F0F8F8;
+  --card: #FFFFFF;
+  --card-foreground: #12383B;
+  --card-muted-foreground: #4A6B70;
+  --card-border: #D2E6E6;
+  --popover: #FFFFFF;
+  --popover-foreground: #12383B;
+
+  /* Typography (High contrast charcoal navy on light surfaces) */
+  --text-primary: #12383B;
+  --text-secondary: #4A6B70;
+  --text-muted: #6A898D;
+  --text-inverse: #FFFFFF;
+  --foreground: #12383B;
+  --muted-foreground: #4A6B70;
+  --page-title: #0C2E30;
+  --page-subtitle: #4A6B70;
+
+  /* Borders & Dividers */
+  --border: #D2E6E6;
+  --border-strong: #B8D8D8;
+  --border-subtle: #E2F0F0;
+
+  /* Primary Brand (Authentic Marquardt Teal Accent) */
+  --primary: #00B8C2;
+  --primary-dark: #009DAA;
+  --primary-light: #33CDD5;
+  --primary-soft: rgba(0, 184, 194, 0.12);
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #009DAA;
+
+  /* Accents */
+  --accent: #33CDD5;
+  --accent-foreground: #FFFFFF;
+  --secondary: #E8F4F4;
+  --secondary-foreground: #12383B;
+  --muted: #E8F4F4;
+
+  /* Status Colors */
+  --status-green: #16A34A;
+  --status-green-bg: #DCFCE7;
+  --status-green-text: #166534;
+  --status-yellow: #FDE047;
+  --status-yellow-bg: #FEF9C3;
+  --status-yellow-text: #FDE047;
+  --status-orange: #EA580C;
+  --status-orange-bg: #FFEDD5;
+  --status-orange-text: #9A3412;
+  --status-red: #DC2626;
+  --status-red-bg: #FEE2E2;
+  --status-red-text: #991B1B;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  /* Inputs & Forms */
+  --input: #FFFFFF;
+  --input-bg: #FFFFFF;
+  --input-background: #F0FAFA;
+  --input-text: #12383B;
+  --input-placeholder: #7A9699;
+  --input-border: #D2E6E6;
+  --switch-background: #00B8C2;
+  --ring: #00B8C2;
+
+  /* Tables */
+  --table-header-bg: #EDF7F7;
+  --table-row-hover: #EAF5F5;
+  --table-border: #D2E6E6;
+
+  /* Charts */
+  --chart-1: #00B8C2;
+  --chart-2: #33CDD5;
+  --chart-3: #66DCE2;
+  --chart-4: #F59E0B;
+  --chart-5: #10B981;
+  --chart-grid: #D2E6E6;
+  --chart-axis: #4A6B70;
+
+  /* Navigation & Sidebar */
+  --navbar-bg: #00B8C2;
+  --sidebar: #00B8C2;
+  --sidebar-gradient: linear-gradient(180deg, #00B8C2 0%, #0A3552 60%, #072C46 100%);
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #33CDD5;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(255, 255, 255, 0.15);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.10);
+  --sidebar-ring: #33CDD5;
+  --gradient-hero: linear-gradient(145deg, #00B8C2 0%, #0A3552 60%, #072C46 100%);
+
+  /* Elevation */
+  --radius: 0.875rem;
+  --shadow: 0 4px 20px rgba(0, 70, 75, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 70, 75, 0.10);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text-primary, var(--foreground));
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+    color: var(--input-text, var(--text-primary));
+  }
+}

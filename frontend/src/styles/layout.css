@@ -1,0 +1,605 @@
+/* Shared responsive layout primitives. Theme colors stay in theme.css. */
+
+:root {
+  --sidebar-width: 190px;
+  --sidebar-gutter: 14px;
+  --page-max-width: 1520px;
+  --page-pad: clamp(16px, 2.4vw, 32px);
+  --touch-min: 40px;
+}
+
+html,
+body,
+#root {
+  max-width: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+.app-shell {
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  background: var(--background, #F4FAFA);
+}
+
+.app-shell--protected {
+  padding-left: calc(var(--sidebar-width) + var(--sidebar-gutter));
+}
+
+.app-main {
+  padding: var(--page-pad) var(--page-pad) 48px;
+  min-width: 0;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+}
+
+.app-mobile-bar {
+  display: none;
+}
+
+.app-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  background: rgba(7, 44, 70, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.app-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  width: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.app-sidebar-close {
+  display: none;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 16px;
+}
+
+.split-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.two-col-grid,
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 16px;
+}
+
+.card-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 16px;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+  min-width: 640px;
+  width: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(12px, env(safe-area-inset-top)) 16px max(12px, env(safe-area-inset-bottom));
+}
+
+.modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: min(90vh, 860px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.chart-scroll {
+  width: 100%;
+  min-height: 240px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chart-scroll-inner {
+  width: 100%;
+  min-width: 560px;
+  height: 100%;
+  min-height: 260px;
+}
+
+.kpi-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: 16px;
+}
+
+.stat-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.presentation-mobile-bar {
+  display: none;
+}
+
+.presentation-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.presentation-slide-pills {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.nb-card {
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+
+.nb-card-media {
+  width: 35%;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.slide-chart-panel {
+  min-height: 240px;
+  height: 100%;
+}
+
+.desktop-only {
+  display: inline;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.card-grid-ib {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+}
+
+.page-heading {
+  font-size: clamp(18px, 2.1vw, 22px);
+  word-break: break-word;
+}
+
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  font-family: Inter, sans-serif;
+}
+
+.login-hero {
+  width: 52%;
+  min-width: 0;
+}
+
+.login-form-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 40px);
+}
+
+.login-stat-grid,
+.login-role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hero-actions,
+.home-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.home-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 24px clamp(16px, 4vw, 48px);
+}
+
+.home-title {
+  font-size: clamp(32px, 6vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.slide-split-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2vh 1.5vw;
+  min-height: 0;
+}
+
+.slide-metrics-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.presentation-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  z-index: 9999;
+  font-family: Inter, sans-serif;
+  background: var(--background, #08475E);
+}
+
+.presentation-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.presentation-viewport {
+  flex: 1;
+  min-height: 0;
+  padding: 2.5vh 2.5vw 1.5vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.presentation-sidebar-panel {
+  width: clamp(220px, 25vw, 360px);
+  height: 100%;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.pep-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 0;
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --page-max-width: 1600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --page-max-width: 1720px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1023px) {
+  .app-shell--protected {
+    padding-left: 0;
+    padding-top: 56px;
+  }
+
+  .app-mobile-bar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 46;
+    height: 56px;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    background: var(--navbar-bg, #072C46);
+    color: #fff;
+    border-bottom: 1px solid var(--sidebar-border, rgba(255, 255, 255, 0.1));
+  }
+
+  .app-mobile-bar button {
+    width: var(--touch-min);
+    height: var(--touch-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .app-mobile-bar span {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .app-sidebar {
+    width: min(280px, 86vw);
+    transform: translateX(-105%);
+    transition: transform 0.22s ease;
+    box-shadow: 8px 0 28px rgba(0, 0, 0, 0.28);
+  }
+
+  .app-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .app-sidebar-close {
+    display: flex;
+  }
+
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-hero {
+    width: 100%;
+    min-height: 160px;
+  }
+
+  .login-role-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .login-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .presentation-root {
+    flex-direction: column;
+    height: 100dvh;
+  }
+
+  .presentation-sidebar-panel {
+    display: none;
+  }
+
+  .presentation-sidebar-panel.is-drawer {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10010;
+    width: min(320px, 88vw);
+    height: 100%;
+    box-shadow: 8px 0 28px rgba(0, 0, 0, 0.35);
+  }
+
+  .presentation-viewport {
+    overflow: auto;
+    padding: 12px 12px 8px;
+  }
+
+  .slide-split-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .slide-metrics-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pep-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-scroll-inner {
+    min-width: 640px;
+    height: 280px;
+  }
+
+  .presentation-mobile-bar {
+    display: flex;
+    flex-shrink: 0;
+    height: 48px;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    background: var(--navbar-bg, #063A4D);
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .presentation-mobile-bar button {
+    width: var(--touch-min);
+    height: var(--touch-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .presentation-slide-pills {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: inline !important;
+  }
+
+  .nb-card {
+    flex-direction: column;
+  }
+
+  .nb-card-media {
+    width: 100%;
+    min-height: 120px;
+  }
+
+  .stat-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slide-chart-panel {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 639px) {
+  .form-grid,
+  .form-grid-3,
+  .two-col-grid,
+  .card-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .slide-metrics-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .login-role-grid,
+  .login-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-title {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .modal-panel {
+    padding: 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .stat-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 2560px) {
+  :root {
+    --page-max-width: 1800px;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DashboardKpi.Application/1.0.0": {
+        "dependencies": {
+          "DashboardKpi.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DashboardKpi.Application.dll": {}
+        }
+      },
+      "DashboardKpi.Domain/1.0.0": {
+        "runtime": {
+          "DashboardKpi.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DashboardKpi.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DashboardKpi.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@dashboardKpi.api_HostAddress = http://localhost:5189
+
+GET {{dashboardKpi.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
